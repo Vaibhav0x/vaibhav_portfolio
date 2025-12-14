@@ -123,7 +123,7 @@ const HeroSection = ({ scrollTo }) => {
                 group-hover:scale-105 transition-transform duration-700"
               >
                 <img
-                  src="../public/hero.png"
+                  src="/hero.png"
                   alt="Vaibhav Raj"
                   className="w-full h-full object-cover"
                 />
