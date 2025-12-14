@@ -11,35 +11,35 @@ const CurvedSkillsCarousel = () => {
   const skills = [
     { name: 'React', icon: '⚛️', color: 'from-cyan-500 to-blue-600' },
     { name: 'Next.js', icon: '▲', color: 'from-slate-700 to-slate-900' },
-    { name: 'TypeScript', icon: '🔷', color: 'from-blue-600 to-blue-800' },
+    // { name: 'TypeScript', icon: '🔷', color: 'from-blue-600 to-blue-800' },
     { name: 'Tailwind', icon: '🎨', color: 'from-cyan-400 to-teal-500' },
-    { name: 'Vue.js', icon: '💚', color: 'from-green-500 to-emerald-600' },
-    { name: 'Redux', icon: '🔮', color: 'from-purple-600 to-violet-700' },
+    // { name: 'Vue.js', icon: '💚', color: 'from-green-500 to-emerald-600' },
+    // { name: 'Redux', icon: '🔮', color: 'from-purple-600 to-violet-700' },
     { name: 'Node.js', icon: '🟢', color: 'from-green-600 to-green-800' },
     { name: 'Express', icon: '⚡', color: 'from-gray-600 to-gray-800' },
     { name: 'Python', icon: '🐍', color: 'from-yellow-500 to-blue-600' },
     { name: 'Django', icon: '🎯', color: 'from-green-700 to-emerald-900' },
     { name: 'MongoDB', icon: '🍃', color: 'from-green-500 to-green-700' },
     { name: 'PostgreSQL', icon: '🐘', color: 'from-blue-700 to-indigo-800' },
-    { name: 'GraphQL', icon: '🔺', color: 'from-pink-600 to-rose-700' },
+    // { name: 'GraphQL', icon: '🔺', color: 'from-pink-600 to-rose-700' },
     { name: 'Docker', icon: '🐳', color: 'from-blue-500 to-blue-700' },
     { name: 'AWS', icon: '☁️', color: 'from-orange-500 to-orange-700' },
-    { name: 'K8s', icon: '⚓', color: 'from-blue-600 to-indigo-700' },
+    // { name: 'K8s', icon: '⚓', color: 'from-blue-600 to-indigo-700' },
     { name: 'CI/CD', icon: '🔄', color: 'from-purple-600 to-indigo-700' },
-    { name: 'Nginx', icon: '🌐', color: 'from-green-600 to-teal-700' },
+    // { name: 'Nginx', icon: '🌐', color: 'from-green-600 to-teal-700' },
     { name: 'Git', icon: '📦', color: 'from-orange-600 to-red-700' },
     { name: 'VS Code', icon: '💻', color: 'from-blue-500 to-cyan-600' },
-    { name: 'Figma', icon: '🎨', color: 'from-purple-500 to-pink-600' },
+    // { name: 'Figma', icon: '🎨', color: 'from-purple-500 to-pink-600' },
     { name: 'Postman', icon: '📮', color: 'from-orange-500 to-orange-700' },
-    { name: 'Jest', icon: '🃏', color: 'from-red-600 to-pink-700' },
-    { name: 'Shopify', icon: '🛒', color: 'from-green-600 to-green-800' },
-    { name: 'WordPress', icon: '📝', color: 'from-blue-600 to-blue-800' },
-    { name: 'FlutterFlow', icon: '📱', color: 'from-purple-600 to-pink-700' },
-    { name: 'RN', icon: '📱', color: 'from-cyan-600 to-blue-700' },
-    { name: 'Flutter', icon: '🦋', color: 'from-blue-500 to-cyan-600' },
-    { name: 'Beeware', icon: '🐝', color: 'from-yellow-600 to-orange-700' },
-    { name: 'Kivy', icon: '🎮', color: 'from-pink-600 to-red-700' },
-    { name: 'Kotlin', icon: '🔷', color: 'from-purple-500 to-indigo-600' }
+    // { name: 'Jest', icon: '🃏', color: 'from-red-600 to-pink-700' },
+    // { name: 'Shopify', icon: '🛒', color: 'from-green-600 to-green-800' },
+    // { name: 'WordPress', icon: '📝', color: 'from-blue-600 to-blue-800' },
+    // { name: 'FlutterFlow', icon: '📱', color: 'from-purple-600 to-pink-700' },
+    // { name: 'RN', icon: '📱', color: 'from-cyan-600 to-blue-700' },
+    // { name: 'Flutter', icon: '🦋', color: 'from-blue-500 to-cyan-600' },
+    // { name: 'Beeware', icon: '🐝', color: 'from-yellow-600 to-orange-700' },
+    // { name: 'Kivy', icon: '🎮', color: 'from-pink-600 to-red-700' },
+    // { name: 'Kotlin', icon: '🔷', color: 'from-purple-500 to-indigo-600' }
   ];
   const sectionRef = useRef(null);
   
@@ -161,12 +161,12 @@ const CurvedSkillsCarousel = () => {
         {/* Compact Info Text */}
         <div className={`text-center mt-4 sm:mt-5 md:mt-6 px-4 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
           <p className="text-[9px] sm:text-[10px] md:text-xs text-slate-500 font-light tracking-wide">
-            Hover to interact • Auto-scrolling
+            • Auto-scrolling
           </p>
         </div>
 
         {/* Compact Stats Section */}
-        <div className={`grid grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-5 mt-6 sm:mt-8 md:mt-10 px-4 sm:px-6 md:px-8 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        {/* <div className={`grid grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-5 mt-6 sm:mt-8 md:mt-10 px-4 sm:px-6 md:px-8 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {[
             { value: '31', label: 'Tech', color: 'from-slate-400 to-slate-200' },
             { value: '90%', label: 'Proficiency', color: 'from-emerald-400 to-teal-300' },
@@ -174,7 +174,6 @@ const CurvedSkillsCarousel = () => {
             { value: '10+', label: 'Certs', color: 'from-violet-400 to-purple-300' }
           ].map((stat, i) => (
             <div key={i} className="group relative">
-              {/* Stat glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent 
                 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-lg rounded-xl" />
               
@@ -198,7 +197,7 @@ const CurvedSkillsCarousel = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`

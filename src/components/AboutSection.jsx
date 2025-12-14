@@ -109,7 +109,7 @@ const AboutSection = () => {
     { icon: Code2, value: "50+", label: "Projects", color: "from-slate-400 to-slate-200" },
     { icon: Award, value: "1.5+", label: "Years Exp", color: "from-emerald-400 to-teal-300" },
     { icon: Coffee, value: "50+", label: "Coffee", color: "from-amber-400 to-yellow-300" },
-    { icon: Lightbulb, value: "20+", label: "Clients", color: "from-violet-400 to-purple-300" }
+    // { icon: Lightbulb, value: "20+", label: "Clients", color: "from-violet-400 to-purple-300" }
   ];
 
   return (

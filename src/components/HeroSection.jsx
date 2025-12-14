@@ -241,8 +241,8 @@ const HeroSection = ({ scrollTo }) => {
               
             </button>
 
-            {/* <a
-              href="/your-resume.pdf"
+            <a
+              href="/Software_Engineer_Vaibhav_Resume.pdf"
               download
               className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-bold
                 bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90
@@ -254,7 +254,7 @@ const HeroSection = ({ scrollTo }) => {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <Download className="relative w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-1 transition-transform duration-300" />
               <span className="relative tracking-wide">Download CV</span>
-            </a> */}
+            </a>
           </div>
 
           {/* Social Links */}

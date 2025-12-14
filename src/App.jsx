@@ -21,8 +21,8 @@ function App() {
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
-      <ClientSection />
-      <ClientReviewSection />
+      {/* <ClientSection /> */}
+      {/* <ClientReviewSection /> */}
       <ContactUs />
       <Footer />
     </>

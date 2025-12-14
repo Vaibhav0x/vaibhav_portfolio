@@ -394,7 +394,7 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Compact Premium Stats */}
-                <div className={`grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 
+                {/* <div className={`grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 
                     mb-8 sm:mb-10 md:mb-12 transition-all duration-1000 delay-200 
                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     {projectStats.map((stat, index) => {
@@ -428,7 +428,7 @@ const ProjectsSection = () => {
                             </div>
                         );
                     })}
-                </div>
+                </div> */}
 
                 {/* Horizontal Scrolling Carousel for Categories */}
                 {!showProjects && (

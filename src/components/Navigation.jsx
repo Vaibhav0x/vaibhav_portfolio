@@ -15,7 +15,7 @@ const Navigation = () => {
             const scrolled = (window.scrollY / windowHeight) * 100;
             setScrollProgress(scrolled);
 
-            const sections = ['home', 'about', 'skills', 'projects', 'reviews', 'contact'];
+            const sections = ['home', 'about', 'skills', 'projects', 'contact'];
             const current = sections.find((section) => {
                 const element = document.getElementById(section);
                 if (element) {
@@ -44,7 +44,7 @@ const Navigation = () => {
         { id: 'about', label: 'About' },
         { id: 'skills', label: 'Skills' },
         { id: 'projects', label: 'Projects' },
-        { id: 'reviews', label: 'Reviews' },
+        // { id: 'reviews', label: 'Reviews' },
         { id: 'contact', label: 'Contact' },
     ];
 
