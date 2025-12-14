@@ -83,20 +83,18 @@ const Navigation = () => {
                             className="group relative flex items-center gap-2.5 sm:gap-3"
                         >
                             {/* Logo Icon Container */}
-                            <div className="relative">
-                                {/* Glow effect */}
+                            {/* <div className="relative">
                                 <div className="absolute inset-0 bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500 rounded-xl blur-lg opacity-40 group-hover:opacity-70 transition-opacity duration-500" />
                                 
-                                {/* Icon container */}
                                 <div className="relative bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 p-2 sm:p-2.5 rounded-xl border border-slate-700/50 group-hover:border-violet-500/50 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-xl">
                                     <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400 group-hover:text-pink-400 transition-colors duration-500" />
                                 </div>
-                            </div>
+                            </div> */}
                             
                             {/* Logo Text */}
-                            <span className="text-xl sm:text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-slate-200 via-white to-slate-200 tracking-tight hidden sm:block group-hover:scale-105 transition-transform duration-300">
+                            {/* <span className="text-xl sm:text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-slate-200 via-white to-slate-200 tracking-tight hidden sm:block group-hover:scale-105 transition-transform duration-300">
                                 Portfolio
-                            </span>
+                            </span> */}
                         </button>
 
                         {/* Desktop Navigation */}
@@ -152,10 +150,16 @@ const Navigation = () => {
                                 {/* Shimmer effect */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
                                 
-                                <span className="relative z-10 flex items-center gap-2 tracking-wide">
+                                {/* <span className="relative z-10 flex items-center gap-2 tracking-wide">
                                     Hire Me
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                                </span>
+                                </span> */}
+                                <a href="#contact" className="group relative">
+                                    <span className="relative z-10 flex items-center gap-2 tracking-wide">
+                                        Hire Me
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                                    </span>
+                                </a>
                             </button>
                         </div>
 

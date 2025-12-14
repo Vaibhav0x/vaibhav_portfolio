@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { FaTelegramPlane, FaDiscord } from "react-icons/fa";
 import { SiFiverr } from "react-icons/si";
+import emailjs from "@emailjs/browser";
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -33,6 +34,7 @@ const ContactUs = () => {
     const [formStatus, setFormStatus] = useState('');
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
+    const formRef = useRef(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -56,11 +58,30 @@ const ContactUs = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    // EMAILJS SUBMIT
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setFormStatus('success');
-        setTimeout(() => {
-            setFormStatus('');
+
+        // Validate FIRST
+        if (!formData.name || !formData.email || !formData.service || !formData.message) {
+            setFormStatus("error");
+            setTimeout(() => setFormStatus(""), 3000);
+            return;
+        }
+
+        // Then set loading
+        setFormStatus("loading");
+
+        try {
+            await emailjs.sendForm(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                formRef.current,
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
+
+            setFormStatus("success");
+
             setFormData({
                 name: '',
                 email: '',
@@ -71,8 +92,15 @@ const ContactUs = () => {
                 message: '',
                 timeline: ''
             });
-        }, 3000);
+
+            setTimeout(() => setFormStatus(""), 3000);
+        } catch (error) {
+            console.error("EmailJS Error:", error);
+            setFormStatus("error");
+            setTimeout(() => setFormStatus(""), 3000);
+        }
     };
+
 
     const contactInfo = [
         {
@@ -161,10 +189,9 @@ const ContactUs = () => {
                 >
                     <div className="relative inline-block mb-4 sm:mb-6">
                         <div className="flex justify-center items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                            <MessageSquare className="text-slate-400 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
-                            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-slate-300 via-slate-100 to-slate-300 tracking-tight">
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-slate-300 via-slate-100 to-slate-300 tracking-tight">
                                 Let's Work Together
-                            </h2>
+                            </h3>
                         </div>
                         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-20 sm:w-24 h-0.5 bg-gradient-to-r from-transparent via-slate-400 to-transparent rounded-full" />
                     </div>
@@ -205,7 +232,11 @@ const ContactUs = () => {
                         <div className="group relative">
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl rounded-3xl" />
                             
-                            <div className="relative bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-slate-700/30 group-hover:border-slate-500/50 p-5 sm:p-6 md:p-8 lg:p-10 shadow-2xl shadow-black/50 transition-all duration-700">
+                            <form 
+                                ref={formRef}
+                                onSubmit={handleSubmit}
+                                className="relative bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-slate-700/30 group-hover:border-slate-500/50 p-5 sm:p-6 md:p-8 lg:p-10 shadow-2xl shadow-black/50 transition-all duration-700"
+                            >
                                 <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
                                     <div className="p-2 sm:p-2.5 bg-gradient-to-r from-slate-400 to-slate-300 rounded-lg shadow-lg">
                                         <Send className="text-slate-900 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
@@ -213,10 +244,32 @@ const ContactUs = () => {
                                     <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight">Send a Message</h3>
                                 </div>
 
+                                {/* Status Messages */}
+                                {formStatus === 'loading' && (
+                                    <div className="mb-4 sm:mb-6 bg-blue-500/20 border border-blue-500/50 rounded-xl p-3 sm:p-4">
+                                        <p className="text-blue-400 font-semibold text-xs sm:text-sm md:text-base">
+                                            Sending your message...
+                                        </p>
+                                    </div>
+                                )}
+
                                 {formStatus === 'success' && (
                                     <div className="mb-4 sm:mb-6 bg-emerald-500/20 border border-emerald-500/50 rounded-xl p-3 sm:p-4 flex items-center gap-2 sm:gap-3">
                                         <CheckCircle className="text-emerald-400 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
-                                        <p className="text-emerald-400 font-semibold text-xs sm:text-sm md:text-base">Thank you! We'll get back to you soon.</p>
+                                        <p className="text-emerald-400 font-semibold text-xs sm:text-sm md:text-base">
+                                            Thank you! We'll get back to you soon.
+                                        </p>
+                                    </div>
+                                )}
+
+                                {formStatus === 'error' && (
+                                    <div className="mb-4 sm:mb-6 bg-red-500/20 border border-red-500/50 rounded-xl p-3 sm:p-4">
+                                        <p className="text-red-400 font-semibold text-xs sm:text-sm md:text-base">
+                                            {!formData.name || !formData.email || !formData.service || !formData.message 
+                                                ? 'Please fill in all required fields (*)'
+                                                : 'Failed to send message. Please try again.'
+                                            }
+                                        </p>
                                     </div>
                                 )}
 
@@ -372,18 +425,33 @@ const ContactUs = () => {
                                     {/* Submit Button */}
                                     <button
                                         type="submit"
-                                        className="group relative w-full overflow-hidden px-6 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg text-white transition-all duration-500 hover:scale-[1.02]"
+                                        disabled={formStatus === 'loading'}
+                                        className="group relative w-full overflow-hidden px-6 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg text-white transition-all duration-500 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-r from-slate-600 via-slate-500 to-slate-600" />
                                         <div className="absolute inset-0 bg-gradient-to-r from-slate-500 via-slate-400 to-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
                                         <span className="relative z-10 flex items-center justify-center gap-2 tracking-wide">
-                                            Send Message
-                                            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                                            {formStatus === 'loading' ? 'Sending...' : 'Send Message'}
+                                            {formStatus !== 'loading' && (
+                                                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                                            )}
                                         </span>
                                     </button>
+                                    {/* Success / Error Message BELOW BUTTON */}
+                                    {formStatus === "success" && (
+                                    <p className="mt-4 text-center text-emerald-400 text-sm sm:text-base font-semibold">
+                                        Message sent successfully! I’ll get back to you soon.
+                                    </p>
+                                    )}
+
+                                    {formStatus === "error" && (
+                                    <p className="mt-4 text-center text-red-400 text-sm sm:text-base font-semibold">
+                                        Failed to send message. Please try again.
+                                    </p>
+                                    )}
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
 

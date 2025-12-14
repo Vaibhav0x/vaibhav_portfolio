@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { Code2 } from 'lucide-react';
 
 const CurvedSkillsCarousel = () => {
@@ -41,12 +41,28 @@ const CurvedSkillsCarousel = () => {
     { name: 'Kivy', icon: '🎮', color: 'from-pink-600 to-red-700' },
     { name: 'Kotlin', icon: '🔷', color: 'from-purple-500 to-indigo-600' }
   ];
-
+  const sectionRef = useRef(null);
+  
   // Triple the skills for seamless infinite scroll
   const tripleSkills = [...skills, ...skills, ...skills];
+  // Intersection Observer
+  useEffect(() => {
+      const observer = new IntersectionObserver(
+          ([entry]) => {
+              setIsVisible(entry.isIntersecting);
+          },
+          { threshold: 0.1 }
+      );
+
+      if (sectionRef.current) {
+          observer.observe(sectionRef.current);
+      }
+
+      return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="relative py-8 sm:py-10 md:py-14 lg:py-16 overflow-hidden bg-black">
+    <section id="skills" ref={sectionRef} className="relative py-8 sm:py-10 md:py-14 lg:py-16 overflow-hidden bg-black">
       {/* Premium Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800/20 via-black to-black"></div>
       <div className="absolute top-1/4 left-0 w-48 sm:w-64 md:w-80 h-48 sm:h-64 md:h-80 bg-slate-500/10 rounded-full blur-3xl animate-pulse" style={{animationDuration: '4s'}}></div>

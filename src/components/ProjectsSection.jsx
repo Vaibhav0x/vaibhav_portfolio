@@ -86,33 +86,8 @@ const ProjectsSection = () => {
         };
     }, []);
 
-    // Auto-scroll carousel effect
-    // useEffect(() => {
-    //     if (!scrollRef.current || showProjects || isHovering) return;
 
-    //     const scrollContainer = scrollRef.current;
-    //     let scrollAmount = 0;
-    //     const scrollStep = 0.5; // Smooth slow scroll
-    //     const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-    //     const scroll = () => {
-    //         if (!isHovering && !showProjects) {
-    //             scrollAmount += scrollStep;
-                
-    //             // Reset to start when reaching end
-    //             if (scrollAmount >= maxScroll) {
-    //                 scrollAmount = 0;
-    //             }
-                
-    //             scrollContainer.scrollLeft = scrollAmount;
-    //         }
-    //     };
-
-    //     const interval = setInterval(scroll, 20); // Smooth 50fps animation
-
-    //     return () => clearInterval(interval);
-    // }, [showProjects, isHovering]);
-    // Smooth auto-scroll using requestAnimationFrame (NO LAG)
+    // Smooth auto-scroll using requestAnimationFrame
     useEffect(() => {
         if (!scrollRef.current || showProjects) return;
 
@@ -272,7 +247,7 @@ const ProjectsSection = () => {
                     overflow-hidden group-hover:scale-[1.03] transform-gpu">
                     
                     {/* Premium shimmer */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10">
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10 pointer-events-none">
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
                             translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1500" />
                     </div>
@@ -286,8 +261,9 @@ const ProjectsSection = () => {
                         />
                         
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
-                        <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} 
-                            opacity-0 group-hover:opacity-20 transition-all duration-700 mix-blend-overlay`} />
+                            <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} 
+                                opacity-0 group-hover:opacity-20 transition-all duration-700 mix-blend-overlay pointer-events-none`} />
+
                         
                         {project.highlight && (
                             <div className="absolute top-3 left-3 z-20">

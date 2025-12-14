@@ -217,11 +217,13 @@ const HeroSection = ({ scrollTo }) => {
               {/* Shimmer Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
               
-              <span className="relative flex items-center gap-2 justify-center tracking-wide">
-                {/* <Rocket className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform duration-300" /> */}
-                View My Work
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
+              <a href="#projects" className="group">
+                <span className="relative flex items-center gap-2 justify-center tracking-wide">
+                  View My Work
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </a>
+
             </button>
 
             <button
@@ -233,10 +235,13 @@ const HeroSection = ({ scrollTo }) => {
                 hover:scale-105 transition-all duration-500 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="relative tracking-wide">Let's Connect</span>
+              <a href="#contact" className="group">
+                <span className="relative tracking-wide">Let's Connect</span>
+              </a>
+              
             </button>
 
-            <a
+            {/* <a
               href="/your-resume.pdf"
               download
               className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-bold
@@ -249,7 +254,7 @@ const HeroSection = ({ scrollTo }) => {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <Download className="relative w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-1 transition-transform duration-300" />
               <span className="relative tracking-wide">Download CV</span>
-            </a>
+            </a> */}
           </div>
 
           {/* Social Links */}

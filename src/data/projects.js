@@ -1,19 +1,8 @@
-
-// export const projectFilters = [
-//     { id: 'all', label: 'All Projects', count: 24 },
-//     { id: 'web', label: 'Web Apps', count: 12 },
-//     { id: 'mobile', label: 'Mobile', count: 3 },
-//     { id: 'saas', label: 'SaaS', count: 1 },
-//     { id: 'ai', label: 'AI', count: 2 },
-//     { id: 'automation', label: 'Automation', count: 5 },
-//     { id: 'blockchain', label: 'Blockchain', count: 1 }
-// ];
-
 export const projectFilters = [
     { id: 'websites', label: 'Websites', count: 12 },
     { id: 'apps', label: 'Mobile Apps', count: 4 },
     { id: 'scraping', label: 'Web Scraping', count: 2 },
-    { id: 'automation', label: 'Automation', count: 5 },
+    { id: 'automation', label: 'Automation', count: 3 },
     { id: 'ai', label: 'AI/ML', count: 2 },
     { id: 'blockchain', label: 'Blockchain', count: 1 }
 ];
@@ -586,20 +575,42 @@ export const projects = [
         highlight: true
     },
     {
-        id: 24,
-        title: "Proximity - Mobile Application",
-        category: "apps",
-        description: "A React Native chat application built with Expo that provides end-to-end encrypted messaging using Hippius S3 as the storage backend. Users are identified by Bittensor hotkeys derived from mnemonics, and all messages are encrypted using XChaCha20-Poly1305 sealed boxes.",
-        image: './public/project_images/proximity_app.png',
-        tech: ["ReactJs", "Node.js", "Figma"],
-        liveUrl: '',
-        githubUrl: 'https://github.com/Vaibhav0x/',
-        status: 'Live',
-        year: '2025',
-        team: '10 members',
-        features: ['Photo Sharing', 'Stories', 'Messaging', 'AI Recommendations'],
-        stats: { users: '50K+', rating: 4.7, downloads: '30K+' },
-        gradient: 'from-blue-500 to-cyan-500',
-        highlight: true
-    }
+    id: 25,
+    title: "Proximity – Secure Mobile Chat Application",
+    category: "apps",
+    description: "Proximity is a secure, real-time mobile chat application built with React Native and Expo. It focuses on privacy-first communication using end-to-end encryption, decentralized identity, and scalable cloud storage. The app enables seamless messaging, media sharing, and intelligent recommendations while ensuring data confidentiality.",
+    image: "./public/project_images/proximity_app.png",
+    tech: [
+        "React Native",
+        "Expo",
+        "Node.js",
+        "REST APIs",
+        "Hippius S3",
+        "Bittensor Identity",
+        "XChaCha20-Poly1305",
+        "Figma"
+    ],
+    liveUrl: "", // App not publicly deployed yet (mobile build)
+    githubUrl: "https://github.com/Vaibhav0x/",
+    status: "Live",
+    year: "2025",
+    team: "10 members",
+    features: [
+        "End-to-End Encrypted Messaging",
+        "Decentralized User Identity (Bittensor Hotkeys)",
+        "Real-time Chat & Media Sharing",
+        "Secure Cloud Storage with Hippius S3",
+        "AI-powered Content Recommendations",
+        "Scalable Backend Architecture",
+        "Cross-platform Mobile Support (Android & iOS)"
+    ],
+    stats: {
+        users: "50K+",
+        rating: 4.7,
+        downloads: "30K+"
+    },
+    gradient: "from-blue-500 to-cyan-500",
+    highlight: true
+}
+
 ];
