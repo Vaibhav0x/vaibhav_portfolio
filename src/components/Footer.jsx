@@ -86,13 +86,6 @@ const Footer = () => {
             gradient: 'from-black-500 to-cyan-600'
         },
         {
-            icon: FaDiscord,
-            href: 'https://discord.com/users/669880381649977354',
-            label: 'Discord',
-            color: 'hover:bg-blue-500',
-            gradient: 'from-cyan-500 to-cyan-600'
-        },
-        {
             icon: SiFiverr,
             href: 'https://www.fiverr.com/s/kL45WZy',
             label: 'Fiverr',

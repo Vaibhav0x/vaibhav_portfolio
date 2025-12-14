@@ -28,7 +28,7 @@ export const clientPayments = [
     paymentDate: "2025",
     image:
       "./public/client_payments/okiny_app.png",
-    avatar: "TI",
+    avatar: "UT",
     color: "bg-cyan-500",
   },
   {
@@ -104,6 +104,21 @@ export const clientPayments = [
     image:
       "./public/client_payments/line_chat.png",
     avatar: "A",
+    color: "bg-pink-500",
+  },
+  {
+    id: 8,
+    name: "Matthewlazz",
+    project: "Proximity Application Development",
+    amount: "$500",
+    status: "Paid",
+    budget: "$500",
+    timeline: "4 Weeks",
+    paymentMethod: "Paypal",
+    paymentDate: "2025",
+    image:
+      "./public/client_payments/proximity_app.png",
+    avatar: "M",
     color: "bg-pink-500",
   },
 ];

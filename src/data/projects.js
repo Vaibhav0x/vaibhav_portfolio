@@ -1,26 +1,36 @@
 
+// export const projectFilters = [
+//     { id: 'all', label: 'All Projects', count: 24 },
+//     { id: 'web', label: 'Web Apps', count: 12 },
+//     { id: 'mobile', label: 'Mobile', count: 3 },
+//     { id: 'saas', label: 'SaaS', count: 1 },
+//     { id: 'ai', label: 'AI', count: 2 },
+//     { id: 'automation', label: 'Automation', count: 5 },
+//     { id: 'blockchain', label: 'Blockchain', count: 1 }
+// ];
+
 export const projectFilters = [
-    { id: 'all', label: 'All Projects', count: 24 },
-    { id: 'web', label: 'Web Apps', count: 12 },
-    { id: 'mobile', label: 'Mobile', count: 3 },
-    { id: 'saas', label: 'SaaS', count: 1 },
-    { id: 'ai', label: 'AI', count: 2 },
+    { id: 'websites', label: 'Websites', count: 12 },
+    { id: 'apps', label: 'Mobile Apps', count: 4 },
+    { id: 'scraping', label: 'Web Scraping', count: 2 },
     { id: 'automation', label: 'Automation', count: 5 },
+    { id: 'ai', label: 'AI/ML', count: 2 },
     { id: 'blockchain', label: 'Blockchain', count: 1 }
 ];
 
+
 export const projectStats = [
     { icon: 'Briefcase', value: '50+', label: 'Completed Projects', color: 'from-purple-500 to-pink-500' },
-    { icon: 'Users', value: '30+', label: 'Happy Clients', color: 'from-pink-500 to-orange-500' },
-    { icon: 'Award', value: '15+', label: 'Awards Won', color: 'from-orange-500 to-yellow-500' },
-    { icon: 'TrendingUp', value: '98%', label: 'Success Rate', color: 'from-green-500 to-emerald-500' }
+    { icon: 'Users', value: '20+', label: 'Happy Clients', color: 'from-pink-500 to-orange-500' },
+    { icon: 'Award', value: '5+', label: 'Awards Won', color: 'from-orange-500 to-yellow-500' },
+    { icon: 'TrendingUp', value: '95%', label: 'Success Rate', color: 'from-green-500 to-emerald-500' }
 ];
 
 export const projects = [
     {
         id: 1,
         title: "MartMurfy - E-commerce Website",
-        category: 'web',
+        category: 'websites',
         description: "MartMurfy is a full-stack e-commerce website built with Laravel and php. It features user adding payment gateway system, product listings stores, shopping cart available stores functionality, and a modern UI.",
         image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop',
         tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redis', 'AWS'],
@@ -37,7 +47,7 @@ export const projects = [
     {
         id: 2,
         title: "Spinning Cards Frontend",
-        category: 'web',
+        category: 'websites',
         description: "Spinning Cards is a 3D Gaming website that showcases my skills and projects in an interactive way. It features a rotating card effect, smooth animations, and a modern design.",
         tech: ["React", "ThreeJs", "Framer Motion", "Tailwind", "Typescript", "GSAP"],
         image: './public/project_images/sppining_card.png',
@@ -54,7 +64,7 @@ export const projects = [
     {
         id: 3,
         title: 'Prompt Management Platform',
-        category: 'web',
+        category: 'websites',
         description: "The Prompt Management Platform is a web-based solution designed to efficiently manage and organize prompts within a centralized database. It provides an intuitive dashboard where users can create, update, delete, and categorize prompts for different use cases.",
         image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop',
         tech: ["ReactJs", "NodeJs", "MySQL", "Tailwind"],
@@ -87,7 +97,7 @@ export const projects = [
     {
         id: 5,
         title: "Twitter Automation Chrome Extension",
-        category: 'automation',
+        category: 'scraping',
         description: "A Chrome Extension that automates Twitter interactions such as following, unfollowing, and liking posts. Built for social media growth and management.",
         image: './public/project_images/twitter_extension.png',
         tech: ["JavaScript", "HTML", "CSS", "PlayWright"],
@@ -103,7 +113,7 @@ export const projects = [
     {
         id: 6,
         title: "Vita Neuf Web",
-        category: 'web',
+        category: 'websites',
         description: "A modern and interactive website for Vita Neuf, showcasing advanced 3D animations and smooth UI/UX using Three.js and Framer Motion.",
         image: './public/project_images/vita_neuf.png',
         tech: ["ReactJs", "Tailwind", "ThreeJs", "Framer Motion"],
@@ -136,7 +146,7 @@ export const projects = [
     {
         id: 8,
         title: "Event Management",
-        category: "saas",
+        category: "websites",
         description: "A full-stack event management SaaS platform designed to help organizers create, manage, and promote events while allowing users to discover events, book tickets, and receive notifications. The system supports secure payments, real-time communication, and a scalable architecture suitable for production use.",
         image: "./public/project_images/event_management.png",
         tech: [
@@ -208,7 +218,7 @@ export const projects = [
     {
         id: 11,
         title: "Mortgage Japanese Project",
-        category: 'web',
+        category: "websites",
         description: "A mortgage management web platform tailored for Japanese clients, featuring responsive UI, multilingual support, and backend integration for mortgage calculation and user data handling.",
         image: './public/project_images/mortgage.png',
         tech: ["Next.js", "TailwindCSS", "Node.js", "Framer Motion"],
@@ -242,7 +252,7 @@ export const projects = [
     {
         id: 13,
         title: "O’kiny (Music Streaming Service)",
-        category: 'mobile',
+        category: "apps",
         description: "A conceptual music streaming app designed to differentiate from existing platforms by focusing on playlist rental, artist-first monetization, and Web3 membership. Proposed features include unique UI/UX for younger and middle-aged audiences, exclusive content, and strong artist rights protection.",
         image: './public/project_images/oking_app.png',
         tech: ["UI/UX Design", "Mobile App", "React Native", "Music Streaming", "Firebase"],
@@ -259,7 +269,7 @@ export const projects = [
     {
         id: 14,
         title: "OnlyU (18+ Japanese Content Platform)",
-        category: 'web',
+        category: "websites",
         description: "A full-stack web application inspired by subscription-based content platforms, built with ReactJS, Node.js, TailwindCSS, and Firebase for authentication and data management. Includes responsive UI, secure user login, and content creator dashboards.",
         image: './public/project_images/only_u.png',
         tech: ["ReactJs", "Nodejs", "Tailwind", "Firebase"],
@@ -276,7 +286,7 @@ export const projects = [
     {
         id: 15,
         title: "Google Form U Clone",
-        category: 'web',
+        category: "websites",
         description: "A Google Forms clone that enables users to create, customize, and share online forms with real-time response collection. Built using ReactJS, Node.js, TailwindCSS, and MySQL, with support for multiple question types, authentication, and analytics dashboard.",
         image: './public/project_images/google_docs_clone.png',
         tech: ["ReactJs", "Nodejs", "Tailwind", "MySQL"],
@@ -293,7 +303,7 @@ export const projects = [
     {
         id: 16,
         title: "HipChat",
-        category: 'mobile',
+        category: 'apps',
         description: "A React Native chat application built with Expo that provides end-to-end encrypted messaging using Hippius S3 as the storage backend. Users are identified by Bittensor hotkeys derived from mnemonics, and all messages are encrypted using XChaCha20-Poly1305 sealed boxes.",
         image: './public/project_images/hippchat.png',
         tech: ["React Native", "Blockchain", "S3 Bucket"],
@@ -310,7 +320,7 @@ export const projects = [
     {
         id: 17,
         title: "DailyDo App",
-        category: "mobile",
+        category: "apps",
         description: "A cross-platform mobile task management application that helps users plan, track, and manage their daily tasks efficiently. Built using React Native for the frontend and a Flask-based REST API with JWT authentication for secure user access and data management.",
         image: "./public/project_images/daily_do_app.jpg",
         tech: [
@@ -346,7 +356,7 @@ export const projects = [
         {
         id: 18,
         title: "Albania Travel Guide & Tourism Directory",
-        category: "web",
+        category: "websites",
         description: "A large-scale WordPress-based tourism and travel directory for Albania, built using the ListingPro theme. The platform helps tourists discover hotels, restaurants, attractions, tours, and services across all Albanian regions, with advanced search, interactive maps, seasonal content, multilingual support, and SEO-optimized destination guides.",
         image: "./public/project_images/albania.png",
         tech: [
@@ -431,7 +441,7 @@ export const projects = [
     {
         id: 20,
         title: "Pochinki Automation Data Scraper",
-        category: "automation",
+        category: "scraping",
         description: "A high-performance Python-based web scraping and automation system designed to collect large-scale datasets from multiple websites. Built using Playwright for browser automation and MySQL for structured storage, the system is containerized with Docker and capable of scraping and storing over 300,000 records within a few hours.",
         image: "./public/project_images/pochinki_scrapper.png",
         tech: [
@@ -468,7 +478,7 @@ export const projects = [
     {
         id: 21,
         title: "Melio Gaming Site Landing Page",
-        category: "web",
+        category: "websites",
         description: "A modern, high-conversion landing page built for a gaming brand to showcase its product, features, and community. The site focuses on performance, smooth animations, responsive design, and an engaging user experience tailored for gamers.",
         image: "./public/project_images/melio.png",
         tech: [
@@ -502,7 +512,7 @@ export const projects = [
     {
         id: 22,
         title: "Pucket",
-        category: "web",
+        category: "websites",
         description: "A lightweight, modern web application focused on organizing ideas, tasks, and quick notes in a simple and distraction-free interface. Pucket emphasizes clean UI, fast interactions, and ease of use for everyday productivity.",
         image: "./public/project_images/pucket.png",
         tech: [
@@ -535,7 +545,7 @@ export const projects = [
     {
         id: 23,
         title: "Fragments – Cloud-Native Microservice Platform",
-        category: "web",
+        category: "websites",
         description: "A production-ready, cloud-native fragments management system built as a microservice. The platform allows authenticated users to create, update, convert, and manage text, image, and JSON fragments. It leverages AWS services (ECS, ECR, S3, DynamoDB, Cognito), Docker, and CI/CD pipelines with full unit and integration test coverage.",
         image: "./public/project_images/fragment.png",
         tech: ["Node.js","Express.js","Docker","Docker Compose","AWS ECS","AWS ECR","Amazon S3","Amazon DynamoDB","Amazon Cognito","GitHub Actions","Hurl","LocalStack","Sharp"],
@@ -561,12 +571,29 @@ export const projects = [
     {
         id: 24,
         title: "Notion Web App",
-        category: 'web',
+        category: "websites",
         description: "A React Native chat application built with Expo that provides end-to-end encrypted messaging using Hippius S3 as the storage backend. Users are identified by Bittensor hotkeys derived from mnemonics, and all messages are encrypted using XChaCha20-Poly1305 sealed boxes.",
         image: './public/project_images/notion.png',
         tech: ["ReactJs", "Node.js", "S3 Bucket", "AWS",""],
         liveUrl: '',
         githubUrl: 'https://github.com/Vaibhav0x/notion-frontend-1',
+        status: 'Live',
+        year: '2025',
+        team: '10 members',
+        features: ['Photo Sharing', 'Stories', 'Messaging', 'AI Recommendations'],
+        stats: { users: '50K+', rating: 4.7, downloads: '30K+' },
+        gradient: 'from-blue-500 to-cyan-500',
+        highlight: true
+    },
+    {
+        id: 24,
+        title: "Proximity - Mobile Application",
+        category: "apps",
+        description: "A React Native chat application built with Expo that provides end-to-end encrypted messaging using Hippius S3 as the storage backend. Users are identified by Bittensor hotkeys derived from mnemonics, and all messages are encrypted using XChaCha20-Poly1305 sealed boxes.",
+        image: './public/project_images/proximity_app.png',
+        tech: ["ReactJs", "Node.js", "Figma"],
+        liveUrl: '',
+        githubUrl: 'https://github.com/Vaibhav0x/',
         status: 'Live',
         year: '2025',
         team: '10 members',

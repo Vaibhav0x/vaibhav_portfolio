@@ -1,6 +1,5 @@
-// Navigation.jsx
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X, Sparkles, Zap, ArrowRight } from 'lucide-react';
 
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,134 +50,211 @@ const Navigation = () => {
 
     return (
         <>
-            {/* Scroll Progress Bar */}
-            <div className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-orange-500/20 z-50">
-                <div
-                    className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 transition-all duration-300 shadow-lg shadow-pink-500/50"
-                    style={{ width: `${scrollProgress}%` }}
-                />
+            {/* Premium Scroll Progress Bar */}
+            <div className="fixed top-0 left-0 right-0 h-1 bg-slate-900/50 backdrop-blur-sm z-50">
+                <div className="relative h-full overflow-hidden">
+                    {/* Animated gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500 opacity-20" />
+                    
+                    {/* Progress bar with glow */}
+                    <div
+                        className="relative h-full bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500 transition-all duration-300 shadow-lg shadow-purple-500/50"
+                        style={{ width: `${scrollProgress}%` }}
+                    >
+                        {/* Shimmer effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
+                    </div>
+                </div>
             </div>
 
-            {/* Navigation Bar */}
+            {/* Premium Navigation Bar */}
             <nav
-                className={`fixed top-0 w-full z-40 transition-all duration-500 ${isScrolled
-                    ? 'bg-slate-900/80 backdrop-blur-xl shadow-lg shadow-purple-700/10 border-b border-purple-700/20'
-                    : 'bg-transparent'
-                    }`}
+                className={`fixed top-0 w-full z-40 transition-all duration-500 ${
+                    isScrolled
+                        ? 'bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-2xl shadow-2xl shadow-black/50 border-b border-slate-700/30'
+                        : 'bg-transparent'
+                }`}
             >
-                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-                    <div className="flex justify-between items-center h-20">
-                        {/* Logo */}
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex justify-between items-center h-16 sm:h-18 lg:h-20">
+                        {/* Premium Logo */}
                         <button
                             onClick={() => scrollTo('home')}
-                            className="group flex items-center gap-2 relative"
+                            className="group relative flex items-center gap-2.5 sm:gap-3"
                         >
-                            {/* <div className="relative">
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur-lg opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-2 rounded-lg border border-purple-500/30 group-hover:border-pink-500/50 transition-all duration-300 flex items-center justify-center">
-                                    <Sparkles className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400" size={22} />
+                            {/* Logo Icon Container */}
+                            <div className="relative">
+                                {/* Glow effect */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500 rounded-xl blur-lg opacity-40 group-hover:opacity-70 transition-opacity duration-500" />
+                                
+                                {/* Icon container */}
+                                <div className="relative bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 p-2 sm:p-2.5 rounded-xl border border-slate-700/50 group-hover:border-violet-500/50 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-xl">
+                                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400 group-hover:text-pink-400 transition-colors duration-500" />
                                 </div>
-                            </div> */}
-                            {/* <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent hidden sm:block">
+                            </div>
+                            
+                            {/* Logo Text */}
+                            <span className="text-xl sm:text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-slate-200 via-white to-slate-200 tracking-tight hidden sm:block group-hover:scale-105 transition-transform duration-300">
                                 Portfolio
-                            </span> */}
+                            </span>
                         </button>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden lg:flex items-center space-x-2">
+                        <div className="hidden lg:flex items-center gap-1">
                             {navItems.map((item) => (
                                 <button
                                     key={item.id}
                                     onClick={() => scrollTo(item.id)}
-                                    className={`relative px-5 py-2 rounded-xl font-medium transition-all duration-300 group ${activeSection === item.id ? 'text-white' : 'text-gray-400 hover:text-white'
-                                        }`}
+                                    className={`relative px-4 xl:px-5 py-2.5 rounded-xl font-semibold text-sm xl:text-base transition-all duration-500 group ${
+                                        activeSection === item.id 
+                                            ? 'text-white scale-105' 
+                                            : 'text-slate-400 hover:text-white hover:scale-105'
+                                    }`}
                                 >
-                                    {/* Active Background */}
+                                    {/* Active state background */}
                                     {activeSection === item.id && (
-                                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-orange-500/20 rounded-xl border border-purple-500/30 backdrop-blur-sm"></div>
+                                        <>
+                                            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 via-purple-500/20 to-pink-500/20 rounded-xl border border-violet-500/30 backdrop-blur-sm" />
+                                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-xl animate-shimmer" />
+                                        </>
                                     )}
 
-                                    {/* Hover Background */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    {/* Hover background */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                                    {/* Text */}
-                                    <span className="relative z-10">{item.label}</span>
+                                    {/* Text with tracking */}
+                                    <span className="relative z-10 tracking-wide">{item.label}</span>
 
-                                    {/* Underline Animation */}
-                                    <div
-                                        className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 transition-all duration-300 ${activeSection === item.id ? 'w-3/4' : 'w-0 group-hover:w-3/4'
+                                    {/* Premium underline animation */}
+                                    <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 h-0.5 rounded-full transition-all duration-500">
+                                        <div
+                                            className={`h-full bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500 rounded-full shadow-lg shadow-purple-500/50 transition-all duration-500 ${
+                                                activeSection === item.id ? 'w-3/4' : 'w-0 group-hover:w-3/4'
                                             }`}
-                                    ></div>
+                                        />
+                                    </div>
                                 </button>
                             ))}
                         </div>
 
-                        {/* CTA Button - Desktop */}
+                        {/* Premium CTA Button - Desktop */}
                         <div className="hidden lg:block">
                             <button
                                 onClick={() => scrollTo('contact')}
-                                className="relative group overflow-hidden px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-pink-500/50"
+                                className="group relative overflow-hidden px-5 xl:px-6 py-2.5 xl:py-3 rounded-xl font-bold text-sm xl:text-base text-white transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
                             >
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600"></div>
-                                <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <span className="relative z-10">Hire Me</span>
+                                {/* Gradient background */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-purple-600 to-pink-600" />
+                                
+                                {/* Animated gradient on hover */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                
+                                {/* Shimmer effect */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                                
+                                <span className="relative z-10 flex items-center gap-2 tracking-wide">
+                                    Hire Me
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                                </span>
                             </button>
                         </div>
 
-                        {/* Mobile Menu Button */}
+                        {/* Premium Mobile Menu Button */}
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="lg:hidden relative group p-2 rounded-lg flex items-center justify-center"
+                            className="lg:hidden relative group p-2.5 sm:p-3 rounded-xl flex items-center justify-center"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg blur-md group-hover:blur-lg transition-all duration-300"></div>
+                            {/* Glow background */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 via-purple-500/20 to-pink-500/20 rounded-xl blur-md group-hover:blur-lg transition-all duration-500" />
+                            
+                            {/* Button background */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 rounded-xl border border-slate-700/50 group-hover:border-violet-500/50 transition-all duration-500" />
+                            
                             <div className="relative">
                                 {isMenuOpen ? (
-                                    <X className="text-pink-400" size={26} />
+                                    <X className="w-5 h-5 sm:w-6 sm:h-6 text-pink-400 group-hover:rotate-90 transition-transform duration-500" />
                                 ) : (
-                                    <Menu className="text-purple-400" size={26} />
+                                    <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-violet-400 group-hover:scale-110 transition-transform duration-300" />
                                 )}
                             </div>
                         </button>
                     </div>
                 </div>
 
-                {/* Mobile Menu */}
+                {/* Premium Mobile Menu */}
                 <div
-                    className={`lg:hidden overflow-hidden transition-all duration-500 ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-                        }`}
+                    className={`lg:hidden overflow-hidden transition-all duration-700 ${
+                        isMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
                 >
-                    <div className="bg-gradient-to-br from-slate-900/95 via-purple-900/10 to-slate-900/95 backdrop-blur-xl border-t border-purple-500/20">
-                        <div className="px-4 py-6 space-y-3">
+                    <div className="relative bg-gradient-to-br from-slate-900/98 via-slate-800/98 to-slate-900/98 backdrop-blur-2xl border-t border-slate-700/30 shadow-2xl shadow-black/50">
+                        {/* Decorative gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-transparent to-pink-500/5 pointer-events-none" />
+                        
+                        <div className="relative px-4 sm:px-6 py-6 space-y-2">
                             {navItems.map((item, index) => (
                                 <button
                                     key={item.id}
                                     onClick={() => scrollTo(item.id)}
-                                    className={`block w-full text-left px-6 py-4 rounded-xl font-medium transition-all duration-300 transform ${activeSection === item.id
-                                        ? 'bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-orange-500/20 text-white border border-purple-500/30 scale-105 shadow-lg shadow-purple-500/20'
-                                        : 'text-gray-400 hover:text-white hover:bg-slate-800/50 hover:scale-105'
-                                        }`}
+                                    className={`group relative block w-full text-left px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-500 overflow-hidden ${
+                                        activeSection === item.id
+                                            ? 'text-white scale-[1.02]'
+                                            : 'text-slate-400 hover:text-white hover:scale-[1.02]'
+                                    }`}
                                     style={{
                                         animationDelay: `${index * 50}ms`,
-                                        animation: isMenuOpen ? 'slideIn 0.3s ease-out forwards' : 'none',
+                                        animation: isMenuOpen ? 'slideIn 0.5s ease-out forwards' : 'none',
                                     }}
                                 >
-                                    <div className="flex items-center justify-between">
-                                        <span>{item.label}</span>
-                                        {activeSection === item.id && (
-                                            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse"></div>
+                                    {/* Active background */}
+                                    {activeSection === item.id && (
+                                        <>
+                                            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 via-purple-500/20 to-pink-500/20 border border-violet-500/30 rounded-xl backdrop-blur-sm" />
+                                            <div className="absolute inset-0 shadow-lg shadow-purple-500/20" />
+                                        </>
+                                    )}
+                                    
+                                    {/* Hover background */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-slate-800/50 via-slate-700/50 to-slate-800/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    
+                                    <div className="relative flex items-center justify-between">
+                                        <span className="tracking-wide">{item.label}</span>
+                                        
+                                        {activeSection === item.id ? (
+                                            <div className="relative">
+                                                <div className="absolute inset-0 w-2.5 h-2.5 rounded-full bg-purple-500 blur-sm animate-pulse" />
+                                                <div className="relative w-2.5 h-2.5 rounded-full bg-gradient-to-r from-violet-400 to-pink-400" />
+                                            </div>
+                                        ) : (
+                                            <ArrowRight className="w-4 h-4 text-slate-600 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                                         )}
                                     </div>
                                 </button>
                             ))}
 
-                            {/* Mobile CTA */}
+                            {/* Premium Mobile CTA */}
                             <button
                                 onClick={() => scrollTo('contact')}
-                                className="w-full mt-4 relative group overflow-hidden px-6 py-4 rounded-xl font-semibold text-white"
+                                className="group relative w-full mt-4 overflow-hidden px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base text-white transition-all duration-500 hover:scale-[1.02]"
+                                style={{
+                                    animationDelay: `${navItems.length * 50}ms`,
+                                    animation: isMenuOpen ? 'slideIn 0.5s ease-out forwards' : 'none',
+                                }}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600"></div>
-                                <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 opacity-0 group-active:opacity-100 transition-opacity duration-300"></div>
-                                <span className="relative z-10">Hire Me</span>
+                                {/* Gradient background */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-purple-600 to-pink-600" />
+                                
+                                {/* Animated gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-violet-600 opacity-0 group-active:opacity-100 transition-opacity duration-500" />
+                                
+                                {/* Shimmer */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                                
+                                <span className="relative z-10 flex items-center justify-center gap-2 tracking-wide">
+                                    <Zap className="w-4 h-4" />
+                                    Hire Me
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -186,17 +262,30 @@ const Navigation = () => {
             </nav>
 
             <style>{`
-        @keyframes slideIn {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      `}</style>
+                @keyframes slideIn {
+                    from {
+                        opacity: 0;
+                        transform: translateX(-20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+                
+                @keyframes shimmer {
+                    0% {
+                        transform: translateX(-100%);
+                    }
+                    100% {
+                        transform: translateX(100%);
+                    }
+                }
+                
+                .animate-shimmer {
+                    animation: shimmer 3s infinite;
+                }
+            `}</style>
         </>
     );
 };
