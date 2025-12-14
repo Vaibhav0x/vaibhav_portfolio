@@ -12,7 +12,7 @@ export const clientPayments = [
     paymentMethod: "Crypto",
     paymentDate: "2025",
     image:
-      "./public/client_payments/google_ext.png",
+      "/client_payments/google_ext.png",
     avatar: "SW",
     color: "bg-purple-500",
   },
@@ -27,7 +27,7 @@ export const clientPayments = [
     paymentMethod: "Cypto",
     paymentDate: "2025",
     image:
-      "./public/client_payments/okiny_app.png",
+      "/client_payments/okiny_app.png",
     avatar: "UT",
     color: "bg-cyan-500",
   },
@@ -42,7 +42,7 @@ export const clientPayments = [
     paymentMethod: "Cypto",
     paymentDate: "2025",
     image:
-      "./public/client_payments/google_doc_clone1.png",
+      "/client_payments/google_doc_clone1.png",
     avatar: "MT",
     color: "bg-green-500",
   },
@@ -72,7 +72,7 @@ export const clientPayments = [
     paymentMethod: "Crypto",
     paymentDate: "2025",
     image:
-      "./public/client_payments/line_chat.png",
+      "/client_payments/line_chat.png",
     avatar: "A",
     color: "bg-pink-500",
   },
@@ -87,7 +87,7 @@ export const clientPayments = [
     paymentMethod: "Crypto",
     paymentDate: "2025",
     image:
-      "./public/client_payments/line_chat.png",
+      "/client_payments/line_chat.png",
     avatar: "A",
     color: "bg-pink-500",
   },
@@ -102,7 +102,7 @@ export const clientPayments = [
     paymentMethod: "Crypto",
     paymentDate: "2025",
     image:
-      "./public/client_payments/line_chat.png",
+      "/client_payments/line_chat.png",
     avatar: "A",
     color: "bg-pink-500",
   },
@@ -117,7 +117,7 @@ export const clientPayments = [
     paymentMethod: "Paypal",
     paymentDate: "2025",
     image:
-      "./public/client_payments/proximity_app.png",
+      "/client_payments/proximity_app.png",
     avatar: "M",
     color: "bg-pink-500",
   },
