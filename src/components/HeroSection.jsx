@@ -135,7 +135,7 @@ const HeroSection = ({ scrollTo }) => {
           </div>
 
           {/* Location Badge */}
-          <div 
+          {/* <div 
             className={`inline-flex items-center gap-2 px-4 py-2 mb-4 sm:mb-6 rounded-full
               bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90
               backdrop-blur-xl border border-slate-700/30 shadow-xl
@@ -147,7 +147,7 @@ const HeroSection = ({ scrollTo }) => {
             <span className="text-xs sm:text-sm text-slate-300 font-medium tracking-wide">
               New Delhi, India
             </span>
-          </div>
+          </div> */}
 
           {/* Name with Premium Gradient */}
           <h3 
