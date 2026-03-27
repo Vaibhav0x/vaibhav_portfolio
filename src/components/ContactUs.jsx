@@ -118,6 +118,13 @@ const ContactUs = () => {
             color: 'from-slate-400 to-slate-300'
         },
         {
+            icon: Briefcase,
+            title: 'Freelancing',
+            value: 'Vaibhav Raj',
+            link: 'https://www.freelancer.in/u/RajV12?sb=t',
+            color: 'from-slate-400 to-slate-300'
+        },
+        {
             icon: MapPin,
             title: 'Location',
             value: 'New Delhi, India',
@@ -169,6 +176,12 @@ const ContactUs = () => {
         '3+ months'
     ];
 
+    const schedulingProfile = {
+        title: 'Calendly',
+        link: 'https://calendly.com/rajjvaibhavv121/30min',
+        note: ''
+    };
+
     return (
         <section 
             ref={sectionRef}
@@ -201,7 +214,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* Contact Info Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12">
                     {contactInfo.map((info, index) => {
                         const Icon = info.icon;
                         return (
@@ -524,14 +537,26 @@ const ContactUs = () => {
                                 </div>
                                 <h3 className="text-xl sm:text-2xl font-black text-white mb-2 sm:mb-3 tracking-tight">Schedule a Call</h3>
                                 <p className="text-slate-300 text-xs sm:text-sm mb-4 sm:mb-6 font-light leading-relaxed">
-                                    Prefer to talk directly? Book a free 30-minute consultation call with us.
+                                    Prefer to talk directly? Book a free 15-minute Google Meet consultation call with me.
                                 </p>
-                                <button className="group/btn relative w-full overflow-hidden px-4 py-2.5 sm:py-3 rounded-xl font-bold text-sm sm:text-base text-white transition-all duration-500 hover:scale-[1.02]">
+                                <a
+                                    href={schedulingProfile.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group/btn relative block w-full overflow-hidden px-4 py-2.5 sm:py-3 rounded-xl font-bold text-sm sm:text-base text-white transition-all duration-500 hover:scale-[1.02]"
+                                    aria-label={`Book a call via ${schedulingProfile.title}`}
+                                >
                                     <div className="absolute inset-0 bg-gradient-to-r from-slate-600 via-slate-500 to-slate-600" />
                                     <div className="absolute inset-0 bg-gradient-to-r from-slate-500 via-slate-400 to-slate-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700" />
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-1000" />
-                                    <span className="relative z-10 tracking-wide">Book Now</span>
-                                </button>
+                                    <span className="relative z-10 flex items-center justify-center gap-2 tracking-wide">
+                                        Book on {schedulingProfile.title}
+                                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                                    </span>
+                                </a>
+                                <p className="mt-3 text-[11px] sm:text-xs text-slate-500 font-light leading-relaxed">
+                                    {schedulingProfile.note}
+                                </p>
                             </div>
                         </div>
                     </div>
