@@ -40,13 +40,13 @@ const HeroSection = ({ scrollTo }) => {
     },
     { 
       icon: Linkedin, 
-      href: "https://www.linkedin.com/in/vaibhav-raj-0x/", 
+      href: "https://www.linkedin.com/in/lord-dev-971863399", 
       label: "LinkedIn",
       color: "from-blue-400 to-blue-300"
     },
     { 
       icon: Mail, 
-      href: "mailto:your.rajjvaibhavv121@gmail.com", 
+      href: "mailto:your.vaibhavraj.itm@gmail.com", 
       label: "Email",
       color: "from-violet-400 to-purple-300"
     }
@@ -123,7 +123,7 @@ const HeroSection = ({ scrollTo }) => {
                 group-hover:scale-105 transition-transform duration-700"
               >
                 <img
-                  src="/hero1.jpg"
+                  src="/hero.png"
                   alt="Vaibhav Raj"
                   className="w-full h-full object-cover"
                 />

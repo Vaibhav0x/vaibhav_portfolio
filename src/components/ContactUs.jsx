@@ -106,8 +106,8 @@ const ContactUs = () => {
         {
             icon: Mail,
             title: 'Email',
-            value: 'rajjvaibhavv121@gmail.com',
-            link: 'mailto:rajjvaibhavv121@gmail.com',
+            value: 'vaibhavraj.itm@gmail.com',
+            link: 'mailto:vaibhavraj.itm@gmail.com',
             color: 'from-slate-400 to-slate-300'
         },
         {
@@ -141,7 +141,7 @@ const ContactUs = () => {
     ];
 
     const socialLinks = [
-        { icon: Linkedin, link: 'https://www.linkedin.com/in/vaibhav-raj-0x/' },
+        { icon: Linkedin, link: 'https://www.linkedin.com/in/lord-dev-971863399' },
         { icon: Github, link: 'https://github.com/Vaibhav0x/' },
         { icon: Twitter, link: 'https://x.com/LordD0x' },
         { icon: FaTelegramPlane, link: 'https://t.me/Vaibhav0x' },

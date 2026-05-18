@@ -59,7 +59,7 @@ const Footer = () => {
     const socialLinks = [
         {
             icon: Linkedin,
-            href: 'https://www.linkedin.com/in/vaibhav-raj-0x/',
+            href: 'https://www.linkedin.com/in/lord-dev-971863399',
             label: 'LinkedIn',
             gradient: 'from-blue-400 via-blue-300 to-blue-400'
         },
@@ -92,8 +92,8 @@ const Footer = () => {
     const contactInfo = [
         {
             icon: Mail,
-            text: 'rajjvaibhavv121@gmail.com',
-            href: 'mailto:rajjvaibhav121@gmail.com',
+            text: 'vaibhavraj.itm@gmail.com',
+            href: 'mailto:vaibhavraj.itm@gmail.com',
             gradient: 'from-slate-400 to-slate-200'
         },
         {
